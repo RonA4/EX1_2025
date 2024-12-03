@@ -1,0 +1,15 @@
+CC=gcc
+CFLAGS= -Wall 
+all: main
+
+main : main.o other.o
+	$(CC) $(CFLAGS) main.o other.o -o main 
+
+main.o : main.c other.h
+	$(CC) $(CFLAGS) -c main.c -o main.o
+
+other.o : other.c other.h
+	$(CC) $(CFLAGS) -c other.c -o other.o
+
+clean:
+	rm -f *.o main

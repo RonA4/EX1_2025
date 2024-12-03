@@ -1,0 +1,25 @@
+CC= gcc
+CFLAGS = -Wall -I../Include
+
+ARMOR_SRC= armor.c
+CHARACTER_SRC= character.c
+shiny_SRC= shiny.c
+MAIN_SRC= main.c
+
+ARMOR_OBJ= armor.o
+CHARACTER_OBJ= character.o
+shiny_OBJ= shiny.o
+MAIN_OBJ= main.o
+
+all:main
+
+main:$(ARMOR_OBJ) $(CHARACTER_OBJ) $(shiny_OBJ) $(MAIN_OBJ)
+	$(CC) -o $@ $^
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+clean:
+	rm -f *.o main
+
+

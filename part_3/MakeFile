@@ -1,0 +1,19 @@
+CC = gcc
+CFLAGS = -Wall 
+
+all: main mathlib.a
+
+main: main.o mathlib.a
+	$(CC) $(CFLAGS) -o main main.o -L. -l:mathlib.a
+
+main.o: main.c
+	$(CC) $(CFLAGS) -c main.c
+
+mathlib.a: mathlib.o
+	ar rcs mathlib.a mathlib.o
+
+mathlib.o: mathlib.c mathlib.h
+	$(CC) $(CFLAGS) -c mathlib.c
+
+clean:
+	rm -f main main.o mathlib.a mathlib.o

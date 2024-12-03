@@ -1,0 +1,9 @@
+{
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/ron/Downloads/Ex1/A_1/Debug_code",
+            "binaryPath": "/home/ron/Downloads/Ex1/A_1/Debug_code/program",
+            "binaryArgs": []
+        }
+    ]
+}
